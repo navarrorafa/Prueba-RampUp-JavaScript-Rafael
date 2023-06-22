@@ -6,8 +6,6 @@ let transformarArray = () => {
     let frase = prompt("Digite uma frase?")
     //frase = frase.trim()
     let arryFrase = frase.split("")
-    
-    
     return(arryFrase)
 }
 
@@ -21,15 +19,21 @@ let contar = () => {
     let frase = transformarArray();
     let letra = letraContar();
     let resultado = 0 ;
-    
-
-    for (let i = 0 ; i < frase.length ; i++) {
-        if(frase[i] == letra) {
-            resultado++
-        } 
+    // for (let i = 0 ; i < frase.length ; i++) {
+    //     if(frase[i] == letra) {
+    //         resultado++
+    //     } 
         
        
-    }
+    // }
+
+    //MEJORIA HECHA DEPUES DE LA PRUEBA 
+    frase.forEach( (frase) => {
+          if(frase == letra) {
+            resultado++
+        } 
+    });
+    
     return resultado
 }
 
@@ -37,7 +41,7 @@ let imprimir = () => {
     let resultado = contar()
 
    
-    console.log(`A letra  aparece ${resultado} en la frase!`)
+    console.log(`A letra  aparece ${resultado} veces en la frase!`)
 }
 console.log(imprimir())
 
